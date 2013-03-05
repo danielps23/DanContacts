@@ -1,0 +1,263 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64DE296816E63FC100EC7CB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE296716E63FC100EC7CB7 /* UIKit.framework */; };
+		64DE296A16E63FC100EC7CB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE296916E63FC100EC7CB7 /* Foundation.framework */; };
+		64DE296C16E63FC100EC7CB7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE296B16E63FC100EC7CB7 /* CoreGraphics.framework */; };
+		64DE297216E63FC100EC7CB7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64DE297016E63FC100EC7CB7 /* InfoPlist.strings */; };
+		64DE297416E63FC100EC7CB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DE297316E63FC100EC7CB7 /* main.m */; };
+		64DE297816E63FC100EC7CB7 /* EMBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64DE297716E63FC100EC7CB7 /* EMBAppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		64DE296316E63FC100EC7CB7 /* DanContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64DE296716E63FC100EC7CB7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		64DE296916E63FC100EC7CB7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		64DE296B16E63FC100EC7CB7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		64DE296F16E63FC100EC7CB7 /* DanContacts-Info.plist */ = {isa = PBXFileReference; path = "DanContacts-Info.plist"; sourceTree = "<group>"; };
+		64DE297116E63FC100EC7CB7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		64DE297316E63FC100EC7CB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		64DE297516E63FC100EC7CB7 /* DanContacts-Prefix.pch */ = {isa = PBXFileReference; path = "DanContacts-Prefix.pch"; sourceTree = "<group>"; };
+		64DE297616E63FC100EC7CB7 /* EMBAppDelegate.h */ = {isa = PBXFileReference; path = EMBAppDelegate.h; sourceTree = "<group>"; };
+		64DE297716E63FC100EC7CB7 /* EMBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EMBAppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64DE296016E63FC100EC7CB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64DE296816E63FC100EC7CB7 /* UIKit.framework in Frameworks */,
+				64DE296A16E63FC100EC7CB7 /* Foundation.framework in Frameworks */,
+				64DE296C16E63FC100EC7CB7 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64DE295816E63FC100EC7CB7 = {
+			isa = PBXGroup;
+			children = (
+				64DE296D16E63FC100EC7CB7 /* DanContacts */,
+				64DE296616E63FC100EC7CB7 /* Frameworks */,
+				64DE296416E63FC100EC7CB7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		64DE296416E63FC100EC7CB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64DE296316E63FC100EC7CB7 /* DanContacts.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64DE296616E63FC100EC7CB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				64DE296716E63FC100EC7CB7 /* UIKit.framework */,
+				64DE296916E63FC100EC7CB7 /* Foundation.framework */,
+				64DE296B16E63FC100EC7CB7 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		64DE296D16E63FC100EC7CB7 /* DanContacts */ = {
+			isa = PBXGroup;
+			children = (
+				64DE297616E63FC100EC7CB7 /* EMBAppDelegate.h */,
+				64DE297716E63FC100EC7CB7 /* EMBAppDelegate.m */,
+				64DE296E16E63FC100EC7CB7 /* Supporting Files */,
+			);
+			path = DanContacts;
+			sourceTree = "<group>";
+		};
+		64DE296E16E63FC100EC7CB7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				64DE296F16E63FC100EC7CB7 /* DanContacts-Info.plist */,
+				64DE297016E63FC100EC7CB7 /* InfoPlist.strings */,
+				64DE297316E63FC100EC7CB7 /* main.m */,
+				64DE297516E63FC100EC7CB7 /* DanContacts-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64DE296216E63FC100EC7CB7 /* DanContacts */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64DE297B16E63FC100EC7CB7 /* Build configuration list for PBXNativeTarget "DanContacts" */;
+			buildPhases = (
+				64DE295F16E63FC100EC7CB7 /* Sources */,
+				64DE296016E63FC100EC7CB7 /* Frameworks */,
+				64DE296116E63FC100EC7CB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DanContacts;
+			productName = DanContacts;
+			productReference = 64DE296316E63FC100EC7CB7 /* DanContacts.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64DE295A16E63FC100EC7CB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 64DE295D16E63FC100EC7CB7 /* Build configuration list for PBXProject "DanContacts" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 64DE295816E63FC100EC7CB7;
+			productRefGroup = 64DE296416E63FC100EC7CB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64DE296216E63FC100EC7CB7 /* DanContacts */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64DE296116E63FC100EC7CB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64DE297216E63FC100EC7CB7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64DE295F16E63FC100EC7CB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64DE297416E63FC100EC7CB7 /* main.m in Sources */,
+				64DE297816E63FC100EC7CB7 /* EMBAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		64DE297016E63FC100EC7CB7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				64DE297116E63FC100EC7CB7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		64DE297916E63FC100EC7CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		64DE297A16E63FC100EC7CB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		64DE297C16E63FC100EC7CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DanContacts/DanContacts-Prefix.pch";
+				INFOPLIST_FILE = "DanContacts/DanContacts-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		64DE297D16E63FC100EC7CB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DanContacts/DanContacts-Prefix.pch";
+				INFOPLIST_FILE = "DanContacts/DanContacts-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64DE295D16E63FC100EC7CB7 /* Build configuration list for PBXProject "DanContacts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64DE297916E63FC100EC7CB7 /* Debug */,
+				64DE297A16E63FC100EC7CB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64DE297B16E63FC100EC7CB7 /* Build configuration list for PBXNativeTarget "DanContacts" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64DE297C16E63FC100EC7CB7 /* Debug */,
+				64DE297D16E63FC100EC7CB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64DE295A16E63FC100EC7CB7 /* Project object */;
+}
