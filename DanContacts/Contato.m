@@ -27,11 +27,11 @@
 - (id) initWithCoder:(NSCoder *)aDecoder {
     self = [super init];
     if (self) {
-        [self setNome:[aDecoder decodeObjectForKey:@"nome"]];
-        [self setTelefone:[aDecoder decodeObjectForKey:@"telefone"]];
-        [self setEmail:[aDecoder decodeObjectForKey:@"email"]];
-        [self setEndereco:[aDecoder decodeObjectForKey:@"endereco"]];
-        [self setSite:[aDecoder decodeObjectForKey:@"site"]];
+        self.nome = [aDecoder decodeObjectForKey:@"nome"];
+        self.telefone = [aDecoder decodeObjectForKey:@"telefone"];
+        self.email = [aDecoder decodeObjectForKey:@"email"];
+        self.endereco = [aDecoder decodeObjectForKey:@"endereco"];
+        self.site = [aDecoder decodeObjectForKey:@"site"];
     }
     
     return self;
