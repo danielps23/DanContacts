@@ -20,6 +20,7 @@
         self.navigationItem.title = @"Contatos";
         UIBarButtonItem *botaoExibirFormulario = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(exibeFormulario)];
         self.navigationItem.rightBarButtonItem = botaoExibirFormulario;
+        self.navigationItem.leftBarButtonItem = self.editButtonItem; 
     }
     return self;
 }
@@ -100,8 +101,7 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
     }
     
-    Contato *contato = [[self.sections valueForKey:[[self orderedSections] objectAtIndex:indexPath.section]] objectAtIndex:indexPath.row];
-    
+    Contato *contato = [self contatoBySection:indexPath.section row:indexPath.row];
     cell.textLabel.text = contato.nome;
     cell.detailTextLabel.text = contato.telefone;
     
@@ -117,12 +117,37 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [[self.sections valueForKey:[[self orderedSections] objectAtIndex:section]] count];
+    return [[self contatosBySection:section] count];
 }
 
 - (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
     return [self orderedSections];
 }
 
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSMutableArray *contatosSecao = [self contatosBySection:indexPath.section];
+        Contato *contato = [contatosSecao objectAtIndex:indexPath.row];
+        [contatosSecao removeObjectIdenticalTo:contato];
+        [self.contatos removeObjectIdenticalTo:contato];
+        NSArray *indexPaths = [NSArray arrayWithObject:indexPath];
+        [tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    Contato *contato = [self contatoBySection:indexPath.section row:indexPath.row];
+    EMBFormularioContatoViewController *form = [[EMBFormularioContatoViewController alloc] initWithContato:contato];
+    form.contatos = self.contatos;
+    [self.navigationController pushViewController:form animated:YES];
+}
+
+- (Contato *) contatoBySection:(NSInteger)section row:(NSInteger)row {
+    return [[self contatosBySection:section] objectAtIndex:row];
+}
+
+- (NSMutableArray *) contatosBySection:(NSInteger)section {
+    return [self.sections valueForKey:[[self orderedSections] objectAtIndex:section]];
+}
 
 @end

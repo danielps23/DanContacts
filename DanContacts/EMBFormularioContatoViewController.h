@@ -19,8 +19,13 @@
 
 @property(strong) NSMutableArray *contatos;
 
+@property(strong) Contato *contato;
+
 - (Contato *)pegaDadosDoFormulario;
+- (void) atualizaContato;
 - (IBAction)proximoElemento:(UITextField *)sender;
+
+- (id) initWithContato:(Contato *)contato;
 
 
 @end

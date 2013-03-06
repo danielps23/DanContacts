@@ -12,7 +12,7 @@
 @implementation EMBFormularioContatoViewController
 
 @synthesize nome, telefone, email, endereco, site;
-@synthesize contatos;
+@synthesize contatos, contato;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -20,6 +20,18 @@
     if (self) {
         // Custom initialization
     }
+    return self;
+}
+
+- (id)initWithContato:(Contato *)_contato {
+    self = [super init];
+    if (self) {
+        self.contato = _contato;
+        
+        UIBarButtonItem *confirmar = [[UIBarButtonItem alloc] initWithTitle:@"Confirmar" style:UIBarButtonItemStylePlain target:self action:@selector(atualizaContato)];
+        self.navigationItem.rightBarButtonItem = confirmar;
+    }
+    
     return self;
 }
 
@@ -35,8 +47,13 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    if (self.contato) {
+        nome.text = contato.nome;
+        telefone.text = contato.telefone;
+        email.text = contato.email;
+        endereco.text = contato.endereco;
+        site.text = contato.site;
+    }
 }
 
 - (void)viewDidUnload
@@ -68,7 +85,10 @@
 }
 
 - (Contato *) pegaDadosDoFormulario {
-    Contato *contato = [[Contato alloc] init];
+    if (!self.contato) {
+        contato = [[Contato alloc] init];
+    }
+    
     contato.nome = self.nome.text;
     contato.telefone = self.telefone.text;
     contato.email = self.email.text;
@@ -93,6 +113,11 @@
 //    NSLog(@"dados: %@", dadosDoContato);
 }
 
+- (void) atualizaContato {
+    [self pegaDadosDoFormulario];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)proximoElemento:(UITextField *)sender {
     if ( sender == self.nome ) {
         [self.telefone becomeFirstResponder];
@@ -112,10 +137,8 @@
 }
 
 - (void) criaContato {
-    Contato *contato = [self pegaDadosDoFormulario];
-    [self.contatos addObject:contato];
-    NSLog(@"Contatos cadastrados: %d", self.contatos.count);
-    [ self dismissModalViewControllerAnimated:YES];
+    [self.contatos addObject:[self pegaDadosDoFormulario]];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end

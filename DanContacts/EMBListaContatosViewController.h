@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Contato.h"
 
 @interface EMBListaContatosViewController : UITableViewController
 
@@ -17,5 +18,7 @@
 - (void) createSections;
 - (void) populateSections;
 - (NSArray *) orderedSections;
+- (NSMutableArray *) contatosBySection: (NSInteger)section;
+- (Contato *) contatoBySection: (NSInteger)section row:(NSInteger)row;
 
 @end
