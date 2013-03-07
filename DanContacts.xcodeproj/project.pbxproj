@@ -27,6 +27,7 @@
 		649234B416E64A8000BF4CBC /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
 		649234B616E66FB400BF4CBC /* EMBListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBListaContatosViewController.h; sourceTree = "<group>"; };
 		649234B716E66FB400BF4CBC /* EMBListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBListaContatosViewController.m; sourceTree = "<group>"; };
+		64D7DFE316E8CAA500100EC0 /* EMBListaContatosProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBListaContatosProtocol.h; sourceTree = "<group>"; };
 		64DE296316E63FC100EC7CB7 /* DanContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DE296716E63FC100EC7CB7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64DE296916E63FC100EC7CB7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +88,7 @@
 				649234AF16E6420900BF4CBC /* EMBFormularioContatoViewController.m */,
 				649234B616E66FB400BF4CBC /* EMBListaContatosViewController.h */,
 				649234B716E66FB400BF4CBC /* EMBListaContatosViewController.m */,
+				64D7DFE316E8CAA500100EC0 /* EMBListaContatosProtocol.h */,
 				649234B016E6420900BF4CBC /* EMBFormularioContatoViewController.xib */,
 				64DE297616E63FC100EC7CB7 /* EMBAppDelegate.h */,
 				64DE297716E63FC100EC7CB7 /* EMBAppDelegate.m */,

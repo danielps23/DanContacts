@@ -12,7 +12,7 @@
 @implementation EMBFormularioContatoViewController
 
 @synthesize nome, telefone, email, endereco, site;
-@synthesize contatos, contato;
+@synthesize contato, delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -114,8 +114,12 @@
 }
 
 - (void) atualizaContato {
-    [self pegaDadosDoFormulario];
+    Contato *contatoAtualizado = [self pegaDadosDoFormulario];
     [self.navigationController popViewControllerAnimated:YES];
+    
+    if (self.delegate) {
+        [self.delegate contatoAtualizado:contatoAtualizado];
+    }
 }
 
 - (IBAction)proximoElemento:(UITextField *)sender {
@@ -137,8 +141,12 @@
 }
 
 - (void) criaContato {
-    [self.contatos addObject:[self pegaDadosDoFormulario]];
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    Contato *novoContato = [self pegaDadosDoFormulario];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (self.delegate) {
+        [self.delegate contatoAdicionado:novoContato];
+    }
 }
 
 @end

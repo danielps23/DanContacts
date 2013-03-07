@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Contato.h"
+#import "EMBListaContatosProtocol.h"
 
 @interface EMBFormularioContatoViewController : UIViewController
 
@@ -17,9 +18,9 @@
 @property(nonatomic, weak) IBOutlet UITextField *endereco;
 @property(nonatomic, weak) IBOutlet UITextField *site;
 
-@property(strong) NSMutableArray *contatos;
-
 @property(strong) Contato *contato;
+
+@property(weak) id<EMBListaContatosProtocol> delegate;
 
 - (Contato *)pegaDadosDoFormulario;
 - (void) atualizaContato;

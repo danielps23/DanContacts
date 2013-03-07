@@ -12,7 +12,7 @@
 
 @implementation EMBListaContatosViewController
 
-@synthesize contatos, sections;
+@synthesize contatos, sections, contatoSelecionado;
 
 - (id) init {
     if ( self = [super init] ) {
@@ -20,7 +20,8 @@
         self.navigationItem.title = @"Contatos";
         UIBarButtonItem *botaoExibirFormulario = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(exibeFormulario)];
         self.navigationItem.rightBarButtonItem = botaoExibirFormulario;
-        self.navigationItem.leftBarButtonItem = self.editButtonItem; 
+        self.navigationItem.leftBarButtonItem = self.editButtonItem;
+
     }
     return self;
 }
@@ -34,7 +35,7 @@
 //                          otherButtonTitles:nil];
 //    [alert show];
     EMBFormularioContatoViewController *form = [[EMBFormularioContatoViewController alloc] init];
-    form.contatos = self.contatos;
+    form.delegate = self;
     form.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:form];
     [self presentModalViewController:nav animated:YES];
@@ -46,6 +47,26 @@
     [self populateSections];
     [self.tableView reloadData];
     
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    if ( self.contatoSelecionado ) {
+        NSInteger section = [self.orderedSections indexOfObject:[[self.contatoSelecionado.nome substringToIndex:1] uppercaseString]];
+        NSMutableArray *contatosSecao = [self contatosBySection:section];
+        NSInteger row = [contatosSecao indexOfObject:self.contatoSelecionado];
+        NSIndexPath *linhaDestaque = [NSIndexPath indexPathForRow:row inSection:section];
+        [self.tableView selectRowAtIndexPath:linhaDestaque animated:YES scrollPosition:UITableViewScrollPositionNone];
+        [self.tableView scrollToRowAtIndexPath:linhaDestaque atScrollPosition:UITableViewScrollPositionNone animated:YES];
+        
+        self.contatoSelecionado = nil;
+    }
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(exibeMaisAcoes:)];
+    [self.tableView addGestureRecognizer:longPress];
 }
 
 - (void) createSections {
@@ -138,7 +159,7 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     Contato *contato = [self contatoBySection:indexPath.section row:indexPath.row];
     EMBFormularioContatoViewController *form = [[EMBFormularioContatoViewController alloc] initWithContato:contato];
-    form.contatos = self.contatos;
+    form.delegate = self;
     [self.navigationController pushViewController:form animated:YES];
 }
 
@@ -148,6 +169,65 @@
 
 - (NSMutableArray *) contatosBySection:(NSInteger)section {
     return [self.sections valueForKey:[[self orderedSections] objectAtIndex:section]];
+}
+
+- (void) contatoAdicionado:(Contato *) contato {
+    [self.contatos addObject:contato];
+    self.contatoSelecionado = contato;
+    [self createSections];
+    [self populateSections];
+    [self.tableView reloadData];
+}
+
+- (void) contatoAtualizado:(Contato *) contato {
+    self.contatoSelecionado = contato;   
+}
+
+- (void) exibeMaisAcoes:(UIGestureRecognizer *) gesture {
+    if ( gesture.state == UIGestureRecognizerStateBegan ) {
+        CGPoint ponto = [gesture locationInView:self.tableView];
+        NSIndexPath *index = [self.tableView indexPathForRowAtPoint:ponto];
+        
+        Contato *contato = [self contatoBySection:index.section row:index.row];
+        
+        UIActionSheet *opcoes = [[UIActionSheet alloc] initWithTitle:contato.nome delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Ligar" , @"Enviar Email", @"Visualizar Site", @"Abrir Mapa", nil];
+        [opcoes showInView:self.view];
+    }
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+            [self ligar];
+            break;
+        case 1:
+            [self enviarEmail];
+            break;
+        case 2:
+            [self abrirSite];
+            break;
+        case 3:
+            [self mostrarMapa];
+            break;
+        default:
+            break;
+    }
+}
+
+- (void) ligar {
+    
+}
+
+- (void) enviarEmail {
+    
+}
+
+- (void) abrirSite {
+    
+}
+
+- (void) mostrarMapa {
+    
 }
 
 @end
