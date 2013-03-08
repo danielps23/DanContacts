@@ -108,7 +108,6 @@
 		64DE295816E63FC100EC7CB7 = {
 			isa = PBXGroup;
 			children = (
-				648E3BC216EA34300062E784 /* CoreLocation.framework */,
 				64CC46C216EA1A3D000F07A7 /* images */,
 				64DE296D16E63FC100EC7CB7 /* DanContacts */,
 				64DE296616E63FC100EC7CB7 /* Frameworks */,
@@ -127,6 +126,7 @@
 		64DE296616E63FC100EC7CB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				648E3BC216EA34300062E784 /* CoreLocation.framework */,
 				64CC46C016EA14C9000F07A7 /* MapKit.framework */,
 				64D7DFE516E9162300100EC0 /* MessageUI.framework */,
 				64DE296716E63FC100EC7CB7 /* UIKit.framework */,
