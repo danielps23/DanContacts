@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		648E3BC016EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 648E3BBF16EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.m */; };
+		648E3BC316EA34300062E784 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 648E3BC216EA34300062E784 /* CoreLocation.framework */; };
 		649234B116E6420900BF4CBC /* EMBFormularioContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649234AF16E6420900BF4CBC /* EMBFormularioContatoViewController.m */; };
 		649234B216E6420900BF4CBC /* EMBFormularioContatoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649234B016E6420900BF4CBC /* EMBFormularioContatoViewController.xib */; };
 		649234B516E64A8000BF4CBC /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 649234B416E64A8000BF4CBC /* Contato.m */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		648E3BBE16EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
 		648E3BBF16EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		648E3BC216EA34300062E784 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		649234AE16E6420900BF4CBC /* EMBFormularioContatoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBFormularioContatoViewController.h; sourceTree = "<group>"; };
 		649234AF16E6420900BF4CBC /* EMBFormularioContatoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBFormularioContatoViewController.m; sourceTree = "<group>"; };
 		649234B016E6420900BF4CBC /* EMBFormularioContatoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EMBFormularioContatoViewController.xib; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				648E3BC316EA34300062E784 /* CoreLocation.framework in Frameworks */,
 				64CC46C116EA14C9000F07A7 /* MapKit.framework in Frameworks */,
 				64D7DFE616E9162300100EC0 /* MessageUI.framework in Frameworks */,
 				64DE296816E63FC100EC7CB7 /* UIKit.framework in Frameworks */,
@@ -105,6 +108,7 @@
 		64DE295816E63FC100EC7CB7 = {
 			isa = PBXGroup;
 			children = (
+				648E3BC216EA34300062E784 /* CoreLocation.framework */,
 				64CC46C216EA1A3D000F07A7 /* images */,
 				64DE296D16E63FC100EC7CB7 /* DanContacts */,
 				64DE296616E63FC100EC7CB7 /* Frameworks */,

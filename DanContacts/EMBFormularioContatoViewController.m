@@ -8,9 +8,12 @@
 
 #import "EMBFormularioContatoViewController.h"
 #import "Contato.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation EMBFormularioContatoViewController
 @synthesize botaoFoto;
+@synthesize latitude;
+@synthesize longitude;
 
 @synthesize nome, telefone, email, endereco, site;
 @synthesize contato, delegate;
@@ -54,6 +57,8 @@
         email.text = contato.email;
         endereco.text = contato.endereco;
         site.text = contato.site;
+        latitude.text = [contato.latitude stringValue];
+        longitude.text = [contato.longitude stringValue];
         if ( contato.foto ) {
             [botaoFoto setImage:contato.foto forState:UIControlStateNormal];
         }
@@ -63,6 +68,8 @@
 - (void)viewDidUnload
 {
     [self setBotaoFoto:nil];
+    [self setLatitude:nil];
+    [self setLongitude:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -99,6 +106,8 @@
     contato.email = self.email.text;
     contato.endereco = self.endereco.text;
     contato.site = self.site.text;
+    contato.latitude = [NSNumber numberWithFloat:[latitude.text floatValue]];
+    contato.longitude = [NSNumber numberWithFloat:[longitude.text floatValue]];
     if (botaoFoto.imageView.image) {
         contato.foto = botaoFoto.imageView.image;         
     }
@@ -193,6 +202,20 @@
     }
     
     [self presentModalViewController:picker animated:YES];
+}
+
+- (IBAction)buscarCoordenadas:(id)sender {
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    [geocoder geocodeAddressString:endereco.text completionHandler:
+     ^(NSArray *resultados, NSError *error) {
+         if ( ( error == nil ) && ([resultados count] > 0)) {
+             CLPlacemark *resultado = [resultados objectAtIndex:0];
+             CLLocationCoordinate2D coordenada = resultado.location.coordinate;
+             latitude.text = [NSString stringWithFormat:@"%f", coordenada.latitude];
+             longitude.text = [NSString stringWithFormat:@"%f", coordenada.longitude];
+         }
+     }
+     ];
 }
 
 @end

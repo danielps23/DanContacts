@@ -10,7 +10,7 @@
 
 @implementation Contato
 
-@synthesize nome, telefone, email, endereco, site, foto;
+@synthesize nome, telefone, email, endereco, site, foto, latitude, longitude;
 
 - (NSString *) nomeComEmail {
     return [NSString stringWithFormat:@"%@<%@>", nome, email];
@@ -23,6 +23,8 @@
     [aCoder encodeObject:endereco forKey:@"endereco"];
     [aCoder encodeObject:site forKey:@"site"];
     [aCoder encodeObject:foto forKey:@"foto"];
+    [aCoder encodeObject:latitude forKey:@"latitude"];
+    [aCoder encodeObject:longitude forKey:@"longitude"];
 }
 
 - (id) initWithCoder:(NSCoder *)aDecoder {
@@ -34,6 +36,8 @@
         self.endereco = [aDecoder decodeObjectForKey:@"endereco"];
         self.site = [aDecoder decodeObjectForKey:@"site"];
         self.foto = [aDecoder decodeObjectForKey:@"foto"];
+        self.latitude = [aDecoder decodeObjectForKey:@"latitude"];
+        self.longitude = [aDecoder decodeObjectForKey:@"longitude"];
     }
     
     return self;

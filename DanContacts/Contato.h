@@ -16,6 +16,8 @@
 @property(strong) NSString *endereco;
 @property(strong) NSString *site;
 @property(strong) UIImage *foto;
+@property(strong) NSNumber *latitude;
+@property(strong) NSNumber *longitude;
 
 - (NSString *) nomeComEmail;
 

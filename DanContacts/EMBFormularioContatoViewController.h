@@ -18,6 +18,8 @@
 @property(nonatomic, weak) IBOutlet UITextField *endereco;
 @property(nonatomic, weak) IBOutlet UITextField *site;
 @property (weak, nonatomic) IBOutlet UIButton *botaoFoto;
+@property (weak, nonatomic) IBOutlet UITextField *latitude;
+@property (weak, nonatomic) IBOutlet UITextField *longitude;
 
 @property(strong) Contato *contato;
 
@@ -30,6 +32,7 @@
 - (id) initWithContato:(Contato *)contato;
 
 - (IBAction)selecionaFoto:(id)sender;
+- (IBAction)buscarCoordenadas:(id)sender;
 
 
 @end
