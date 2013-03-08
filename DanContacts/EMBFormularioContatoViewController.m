@@ -14,6 +14,8 @@
 @synthesize botaoFoto;
 @synthesize latitude;
 @synthesize longitude;
+@synthesize loading;
+@synthesize botaoCoordenada;
 
 @synthesize nome, telefone, email, endereco, site;
 @synthesize contato, delegate;
@@ -70,6 +72,8 @@
     [self setBotaoFoto:nil];
     [self setLatitude:nil];
     [self setLongitude:nil];
+    [self setLoading:nil];
+    [self setBotaoCoordenada:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -205,6 +209,8 @@
 }
 
 - (IBAction)buscarCoordenadas:(id)sender {
+    [self.loading startAnimating];
+    [botaoCoordenada setHidden:YES];
     CLGeocoder *geocoder = [[CLGeocoder alloc] init];
     [geocoder geocodeAddressString:endereco.text completionHandler:
      ^(NSArray *resultados, NSError *error) {
@@ -214,6 +220,8 @@
              latitude.text = [NSString stringWithFormat:@"%f", coordenada.latitude];
              longitude.text = [NSString stringWithFormat:@"%f", coordenada.longitude];
          }
+         [self.loading stopAnimating];
+         [botaoCoordenada setHidden:NO];
      }
      ];
 }

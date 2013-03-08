@@ -39,13 +39,14 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lista];
     
     EMBContatosNoMapaViewController *contatosMapa = [[EMBContatosNoMapaViewController alloc] init];
+    contatosMapa.contatos = contatos;
+    
     UINavigationController *mapaNavigation = [[UINavigationController alloc] initWithRootViewController:contatosMapa];
     UITabBarController *tabBarController = [[UITabBarController alloc] init];
     tabBarController.viewControllers = [NSArray arrayWithObjects:nav, mapaNavigation, nil];
 
     self.window.rootViewController = tabBarController;
-    
-    
+        
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
