@@ -10,13 +10,14 @@
 #import "Contato.h"
 #import "EMBListaContatosProtocol.h"
 
-@interface EMBFormularioContatoViewController : UIViewController
+@interface EMBFormularioContatoViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 
 @property(nonatomic, weak) IBOutlet UITextField *nome;
 @property(nonatomic, weak) IBOutlet UITextField *telefone;
 @property(nonatomic, weak) IBOutlet UITextField *email;
 @property(nonatomic, weak) IBOutlet UITextField *endereco;
 @property(nonatomic, weak) IBOutlet UITextField *site;
+@property (weak, nonatomic) IBOutlet UIButton *botaoFoto;
 
 @property(strong) Contato *contato;
 
@@ -27,6 +28,8 @@
 - (IBAction)proximoElemento:(UITextField *)sender;
 
 - (id) initWithContato:(Contato *)contato;
+
+- (IBAction)selecionaFoto:(id)sender;
 
 
 @end

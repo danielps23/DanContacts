@@ -15,6 +15,7 @@
 @property(strong) NSString *email;
 @property(strong) NSString *endereco;
 @property(strong) NSString *site;
+@property(strong) UIImage *foto;
 
 - (NSString *) nomeComEmail;
 

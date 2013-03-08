@@ -189,6 +189,7 @@
         NSIndexPath *index = [self.tableView indexPathForRowAtPoint:ponto];
         
         Contato *contato = [self contatoBySection:index.section row:index.row];
+        contatoLongPress = contato;
         
         UIActionSheet *opcoes = [[UIActionSheet alloc] initWithTitle:contato.nome delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Ligar" , @"Enviar Email", @"Visualizar Site", @"Abrir Mapa", nil];
         [opcoes showInView:self.view];
@@ -212,22 +213,51 @@
         default:
             break;
     }
+    
+    contatoLongPress = nil;
 }
 
 - (void) ligar {
+    UIDevice *device = [UIDevice currentDevice];
+    if ([device.model isEqualToString:@"iPhone"]) {
+        NSString *numero = [NSString stringWithFormat:@"tel:%@", contatoLongPress.telefone];
+        [self abrirAplicativoComURL:numero];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Impossivel fazer ligacao" message:@"Seu dispositivo nao é um iPhone" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    }
     
 }
 
 - (void) enviarEmail {
-    
+    if ( [MFMailComposeViewController canSendMail] ) {
+        MFMailComposeViewController *enviadorEmail = [[MFMailComposeViewController alloc] init];
+        enviadorEmail.mailComposeDelegate = self;
+        
+        [enviadorEmail setToRecipients:[NSArray arrayWithObject:contatoLongPress.email]];
+        [enviadorEmail setSubject:@"Embrapa"];
+        
+        [self presentModalViewController:enviadorEmail animated:YES];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Ooops" message:@"Impossivel enviar email" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil] show];
+    }
 }
 
 - (void) abrirSite {
-    
+    NSString *url = contatoLongPress.site;
+    [self abrirAplicativoComURL:url];
 }
 
 - (void) mostrarMapa {
-    
+    NSString *url = [[NSString stringWithFormat:@"http://maps.google.com/maps?q=%@", contatoLongPress.endereco] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    [self abrirAplicativoComURL:url];
+}
+
+-(void)abrirAplicativoComURL:(NSString *) url {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:url]];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end

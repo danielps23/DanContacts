@@ -11,6 +11,10 @@
 		649234B216E6420900BF4CBC /* EMBFormularioContatoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649234B016E6420900BF4CBC /* EMBFormularioContatoViewController.xib */; };
 		649234B516E64A8000BF4CBC /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 649234B416E64A8000BF4CBC /* Contato.m */; };
 		649234B816E66FB400BF4CBC /* EMBListaContatosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649234B716E66FB400BF4CBC /* EMBListaContatosViewController.m */; };
+		64CC46BD16EA1207000F07A7 /* EMBContatosNoMapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CC46BB16EA1207000F07A7 /* EMBContatosNoMapaViewController.m */; };
+		64CC46BE16EA1207000F07A7 /* EMBContatosNoMapaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46BC16EA1207000F07A7 /* EMBContatosNoMapaViewController.xib */; };
+		64CC46C116EA14C9000F07A7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CC46C016EA14C9000F07A7 /* MapKit.framework */; };
+		64D7DFE616E9162300100EC0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D7DFE516E9162300100EC0 /* MessageUI.framework */; };
 		64DE296816E63FC100EC7CB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE296716E63FC100EC7CB7 /* UIKit.framework */; };
 		64DE296A16E63FC100EC7CB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE296916E63FC100EC7CB7 /* Foundation.framework */; };
 		64DE296C16E63FC100EC7CB7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE296B16E63FC100EC7CB7 /* CoreGraphics.framework */; };
@@ -27,7 +31,12 @@
 		649234B416E64A8000BF4CBC /* Contato.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contato.m; sourceTree = "<group>"; };
 		649234B616E66FB400BF4CBC /* EMBListaContatosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBListaContatosViewController.h; sourceTree = "<group>"; };
 		649234B716E66FB400BF4CBC /* EMBListaContatosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBListaContatosViewController.m; sourceTree = "<group>"; };
+		64CC46BA16EA1207000F07A7 /* EMBContatosNoMapaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBContatosNoMapaViewController.h; sourceTree = "<group>"; };
+		64CC46BB16EA1207000F07A7 /* EMBContatosNoMapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBContatosNoMapaViewController.m; sourceTree = "<group>"; };
+		64CC46BC16EA1207000F07A7 /* EMBContatosNoMapaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EMBContatosNoMapaViewController.xib; sourceTree = "<group>"; };
+		64CC46C016EA14C9000F07A7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		64D7DFE316E8CAA500100EC0 /* EMBListaContatosProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBListaContatosProtocol.h; sourceTree = "<group>"; };
+		64D7DFE516E9162300100EC0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		64DE296316E63FC100EC7CB7 /* DanContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64DE296716E63FC100EC7CB7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		64DE296916E63FC100EC7CB7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -45,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64CC46C116EA14C9000F07A7 /* MapKit.framework in Frameworks */,
+				64D7DFE616E9162300100EC0 /* MessageUI.framework in Frameworks */,
 				64DE296816E63FC100EC7CB7 /* UIKit.framework in Frameworks */,
 				64DE296A16E63FC100EC7CB7 /* Foundation.framework in Frameworks */,
 				64DE296C16E63FC100EC7CB7 /* CoreGraphics.framework in Frameworks */,
@@ -74,6 +85,8 @@
 		64DE296616E63FC100EC7CB7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				64CC46C016EA14C9000F07A7 /* MapKit.framework */,
+				64D7DFE516E9162300100EC0 /* MessageUI.framework */,
 				64DE296716E63FC100EC7CB7 /* UIKit.framework */,
 				64DE296916E63FC100EC7CB7 /* Foundation.framework */,
 				64DE296B16E63FC100EC7CB7 /* CoreGraphics.framework */,
@@ -86,6 +99,9 @@
 			children = (
 				649234AE16E6420900BF4CBC /* EMBFormularioContatoViewController.h */,
 				649234AF16E6420900BF4CBC /* EMBFormularioContatoViewController.m */,
+				64CC46BA16EA1207000F07A7 /* EMBContatosNoMapaViewController.h */,
+				64CC46BB16EA1207000F07A7 /* EMBContatosNoMapaViewController.m */,
+				64CC46BC16EA1207000F07A7 /* EMBContatosNoMapaViewController.xib */,
 				649234B616E66FB400BF4CBC /* EMBListaContatosViewController.h */,
 				649234B716E66FB400BF4CBC /* EMBListaContatosViewController.m */,
 				64D7DFE316E8CAA500100EC0 /* EMBListaContatosProtocol.h */,
@@ -162,6 +178,7 @@
 			files = (
 				64DE297216E63FC100EC7CB7 /* InfoPlist.strings in Resources */,
 				649234B216E6420900BF4CBC /* EMBFormularioContatoViewController.xib in Resources */,
+				64CC46BE16EA1207000F07A7 /* EMBContatosNoMapaViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +194,7 @@
 				649234B116E6420900BF4CBC /* EMBFormularioContatoViewController.m in Sources */,
 				649234B516E64A8000BF4CBC /* Contato.m in Sources */,
 				649234B816E66FB400BF4CBC /* EMBListaContatosViewController.m in Sources */,
+				64CC46BD16EA1207000F07A7 /* EMBContatosNoMapaViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

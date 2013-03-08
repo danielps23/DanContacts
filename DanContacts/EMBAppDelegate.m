@@ -8,6 +8,7 @@
 
 #import "EMBAppDelegate.h"
 #import "EMBListaContatosViewController.h"
+#import "EMBContatosNoMapaViewController.h"
 
 @implementation EMBAppDelegate
 
@@ -36,7 +37,13 @@
 //    self.window.rootViewController = lista;
     
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:lista];
-    self.window.rootViewController = nav;
+    
+    EMBContatosNoMapaViewController *contatosMapa = [[EMBContatosNoMapaViewController alloc] init];
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    tabBarController.viewControllers = [NSArray arrayWithObjects:nav, contatosMapa, nil];
+
+    self.window.rootViewController = tabBarController;
+    
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor whiteColor];

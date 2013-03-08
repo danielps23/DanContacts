@@ -10,6 +10,7 @@
 #import "Contato.h"
 
 @implementation EMBFormularioContatoViewController
+@synthesize botaoFoto;
 
 @synthesize nome, telefone, email, endereco, site;
 @synthesize contato, delegate;
@@ -53,11 +54,15 @@
         email.text = contato.email;
         endereco.text = contato.endereco;
         site.text = contato.site;
+        if ( contato.foto ) {
+            [botaoFoto setImage:contato.foto forState:UIControlStateNormal];
+        }
     }
 }
 
 - (void)viewDidUnload
 {
+    [self setBotaoFoto:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -94,6 +99,9 @@
     contato.email = self.email.text;
     contato.endereco = self.endereco.text;
     contato.site = self.site.text;
+    if (botaoFoto.imageView.image) {
+        contato.foto = botaoFoto.imageView.image;         
+    }
     
     return contato;
 //    NSLog(@"contato com nome: %@", contato.nome);
@@ -147,6 +155,44 @@
     if (self.delegate) {
         [self.delegate contatoAdicionado:novoContato];
     }
+}
+
+- (IBAction)selecionaFoto:(id)sender {
+    if ( [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera] ) {
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@"Escolha a foto do contato" delegate:self cancelButtonTitle:@"Cancelar" destructiveButtonTitle:nil otherButtonTitles:@"Tirar foto", @"Escolher da biblioteca", nil];
+        [ sheet showInView:self.view];
+    } else {
+        UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+        picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        picker.allowsEditing = YES;
+        picker.delegate = self;
+        [self presentModalViewController:picker animated:YES];
+    }
+}
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    UIImage *imagemSelecionada = [info valueForKey:UIImagePickerControllerEditedImage];
+    [botaoFoto setImage:imagemSelecionada forState:UIControlStateNormal];
+    [picker dismissModalViewControllerAnimated:YES];
+}
+
+- (void) actionSheet:(UIActionSheet *)actionSheet didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    
+    switch (buttonIndex) {
+        case 0:
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            break;
+        case 1:
+            picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            break;    
+        default:
+            break;
+    }
+    
+    [self presentModalViewController:picker animated:YES];
 }
 
 @end

@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "Contato.h"
 #import "EMBListaContatosProtocol.h"
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface EMBListaContatosViewController : UITableViewController<EMBListaContatosProtocol, UIActionSheetDelegate>
+@interface EMBListaContatosViewController : UITableViewController<EMBListaContatosProtocol, UIActionSheetDelegate,MFMailComposeViewControllerDelegate> {
+    Contato *contatoLongPress;
+}
 
 @property(strong) NSMutableArray *contatos;
 
@@ -29,5 +32,7 @@
 - (void) enviarEmail;
 - (void) abrirSite;
 - (void) mostrarMapa;
+
+-(void)abrirAplicativoComURL:(NSString *) url;
 
 @end
