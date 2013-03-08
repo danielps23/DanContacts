@@ -16,8 +16,12 @@
 
 - (id) init {
     if ( self = [super init] ) {
-        self.sections = [[NSMutableDictionary alloc] init];
+        UIImage *imageTabItem = [UIImage imageNamed:@"lista-contatos.png"];
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Contatos" image:imageTabItem tag:0];
+        self.tabBarItem = tabItem;
         self.navigationItem.title = @"Contatos";
+        
+        self.sections = [[NSMutableDictionary alloc] init];
         UIBarButtonItem *botaoExibirFormulario = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(exibeFormulario)];
         self.navigationItem.rightBarButtonItem = botaoExibirFormulario;
         self.navigationItem.leftBarButtonItem = self.editButtonItem;

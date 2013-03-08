@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		648E3BC016EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 648E3BBF16EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.m */; };
 		649234B116E6420900BF4CBC /* EMBFormularioContatoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 649234AF16E6420900BF4CBC /* EMBFormularioContatoViewController.m */; };
 		649234B216E6420900BF4CBC /* EMBFormularioContatoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 649234B016E6420900BF4CBC /* EMBFormularioContatoViewController.xib */; };
 		649234B516E64A8000BF4CBC /* Contato.m in Sources */ = {isa = PBXBuildFile; fileRef = 649234B416E64A8000BF4CBC /* Contato.m */; };
@@ -14,6 +15,15 @@
 		64CC46BD16EA1207000F07A7 /* EMBContatosNoMapaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64CC46BB16EA1207000F07A7 /* EMBContatosNoMapaViewController.m */; };
 		64CC46BE16EA1207000F07A7 /* EMBContatosNoMapaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46BC16EA1207000F07A7 /* EMBContatosNoMapaViewController.xib */; };
 		64CC46C116EA14C9000F07A7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CC46C016EA14C9000F07A7 /* MapKit.framework */; };
+		64CC46CC16EA1A57000F07A7 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46C316EA1A57000F07A7 /* Default.png */; };
+		64CC46CD16EA1A57000F07A7 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46C416EA1A57000F07A7 /* Default@2x.png */; };
+		64CC46CE16EA1A57000F07A7 /* gps.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46C516EA1A57000F07A7 /* gps.png */; };
+		64CC46CF16EA1A57000F07A7 /* gps@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46C616EA1A57000F07A7 /* gps@2x.png */; };
+		64CC46D016EA1A57000F07A7 /* lista-contatos.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46C716EA1A57000F07A7 /* lista-contatos.png */; };
+		64CC46D116EA1A57000F07A7 /* lista-contatos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46C816EA1A57000F07A7 /* lista-contatos@2x.png */; };
+		64CC46D216EA1A57000F07A7 /* mapa-contatos.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46C916EA1A57000F07A7 /* mapa-contatos.png */; };
+		64CC46D316EA1A57000F07A7 /* mapa-contatos@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46CA16EA1A57000F07A7 /* mapa-contatos@2x.png */; };
+		64CC46D416EA1A57000F07A7 /* Vila Mariana.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 64CC46CB16EA1A57000F07A7 /* Vila Mariana.gpx */; };
 		64D7DFE616E9162300100EC0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64D7DFE516E9162300100EC0 /* MessageUI.framework */; };
 		64DE296816E63FC100EC7CB7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE296716E63FC100EC7CB7 /* UIKit.framework */; };
 		64DE296A16E63FC100EC7CB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DE296916E63FC100EC7CB7 /* Foundation.framework */; };
@@ -24,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		648E3BBE16EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		648E3BBF16EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
 		649234AE16E6420900BF4CBC /* EMBFormularioContatoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBFormularioContatoViewController.h; sourceTree = "<group>"; };
 		649234AF16E6420900BF4CBC /* EMBFormularioContatoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBFormularioContatoViewController.m; sourceTree = "<group>"; };
 		649234B016E6420900BF4CBC /* EMBFormularioContatoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EMBFormularioContatoViewController.xib; sourceTree = "<group>"; };
@@ -35,6 +47,15 @@
 		64CC46BB16EA1207000F07A7 /* EMBContatosNoMapaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMBContatosNoMapaViewController.m; sourceTree = "<group>"; };
 		64CC46BC16EA1207000F07A7 /* EMBContatosNoMapaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EMBContatosNoMapaViewController.xib; sourceTree = "<group>"; };
 		64CC46C016EA14C9000F07A7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		64CC46C316EA1A57000F07A7 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		64CC46C416EA1A57000F07A7 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		64CC46C516EA1A57000F07A7 /* gps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gps.png; sourceTree = "<group>"; };
+		64CC46C616EA1A57000F07A7 /* gps@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gps@2x.png"; sourceTree = "<group>"; };
+		64CC46C716EA1A57000F07A7 /* lista-contatos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lista-contatos.png"; sourceTree = "<group>"; };
+		64CC46C816EA1A57000F07A7 /* lista-contatos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lista-contatos@2x.png"; sourceTree = "<group>"; };
+		64CC46C916EA1A57000F07A7 /* mapa-contatos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapa-contatos.png"; sourceTree = "<group>"; };
+		64CC46CA16EA1A57000F07A7 /* mapa-contatos@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mapa-contatos@2x.png"; sourceTree = "<group>"; };
+		64CC46CB16EA1A57000F07A7 /* Vila Mariana.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Vila Mariana.gpx"; sourceTree = "<group>"; };
 		64D7DFE316E8CAA500100EC0 /* EMBListaContatosProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMBListaContatosProtocol.h; sourceTree = "<group>"; };
 		64D7DFE516E9162300100EC0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		64DE296316E63FC100EC7CB7 /* DanContacts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DanContacts.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,9 +86,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64CC46C216EA1A3D000F07A7 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				64CC46C316EA1A57000F07A7 /* Default.png */,
+				64CC46C416EA1A57000F07A7 /* Default@2x.png */,
+				64CC46C516EA1A57000F07A7 /* gps.png */,
+				64CC46C616EA1A57000F07A7 /* gps@2x.png */,
+				64CC46C716EA1A57000F07A7 /* lista-contatos.png */,
+				64CC46C816EA1A57000F07A7 /* lista-contatos@2x.png */,
+				64CC46C916EA1A57000F07A7 /* mapa-contatos.png */,
+				64CC46CA16EA1A57000F07A7 /* mapa-contatos@2x.png */,
+				64CC46CB16EA1A57000F07A7 /* Vila Mariana.gpx */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		64DE295816E63FC100EC7CB7 = {
 			isa = PBXGroup;
 			children = (
+				64CC46C216EA1A3D000F07A7 /* images */,
 				64DE296D16E63FC100EC7CB7 /* DanContacts */,
 				64DE296616E63FC100EC7CB7 /* Frameworks */,
 				64DE296416E63FC100EC7CB7 /* Products */,
@@ -97,6 +135,8 @@
 		64DE296D16E63FC100EC7CB7 /* DanContacts */ = {
 			isa = PBXGroup;
 			children = (
+				648E3BBE16EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.h */,
+				648E3BBF16EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.m */,
 				649234AE16E6420900BF4CBC /* EMBFormularioContatoViewController.h */,
 				649234AF16E6420900BF4CBC /* EMBFormularioContatoViewController.m */,
 				64CC46BA16EA1207000F07A7 /* EMBContatosNoMapaViewController.h */,
@@ -179,6 +219,15 @@
 				64DE297216E63FC100EC7CB7 /* InfoPlist.strings in Resources */,
 				649234B216E6420900BF4CBC /* EMBFormularioContatoViewController.xib in Resources */,
 				64CC46BE16EA1207000F07A7 /* EMBContatosNoMapaViewController.xib in Resources */,
+				64CC46CC16EA1A57000F07A7 /* Default.png in Resources */,
+				64CC46CD16EA1A57000F07A7 /* Default@2x.png in Resources */,
+				64CC46CE16EA1A57000F07A7 /* gps.png in Resources */,
+				64CC46CF16EA1A57000F07A7 /* gps@2x.png in Resources */,
+				64CC46D016EA1A57000F07A7 /* lista-contatos.png in Resources */,
+				64CC46D116EA1A57000F07A7 /* lista-contatos@2x.png in Resources */,
+				64CC46D216EA1A57000F07A7 /* mapa-contatos.png in Resources */,
+				64CC46D316EA1A57000F07A7 /* mapa-contatos@2x.png in Resources */,
+				64CC46D416EA1A57000F07A7 /* Vila Mariana.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -195,6 +244,7 @@
 				649234B516E64A8000BF4CBC /* Contato.m in Sources */,
 				649234B816E66FB400BF4CBC /* EMBListaContatosViewController.m in Sources */,
 				64CC46BD16EA1207000F07A7 /* EMBContatosNoMapaViewController.m in Sources */,
+				648E3BC016EA2A9F0062E784 /* TPKeyboardAvoidingScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

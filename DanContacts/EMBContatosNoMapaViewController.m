@@ -9,6 +9,18 @@
 #import "EMBContatosNoMapaViewController.h"
 
 @implementation EMBContatosNoMapaViewController
+@synthesize mapa;
+
+- (id) init {
+    if ( self = [super init] ) {
+        UIImage *imageTabItem = [UIImage imageNamed:@"mapa-contatos.png"];
+        UITabBarItem *tabItem = [[UITabBarItem alloc] initWithTitle:@"Mapa" image:imageTabItem tag:0];
+        self.tabBarItem = tabItem;
+        self.navigationItem.title = @"Localizacao";
+    }
+    
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,10 +45,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    MKUserTrackingBarButtonItem *botaoLocalizacao = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapa];
+    self.navigationItem.leftBarButtonItem = botaoLocalizacao;
 }
 
 - (void)viewDidUnload
 {
+    [self setMapa:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
