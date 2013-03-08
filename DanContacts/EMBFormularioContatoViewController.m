@@ -20,6 +20,8 @@
 @synthesize nome, telefone, email, endereco, site;
 @synthesize contato, delegate;
 
+@synthesize contexto = _contexto;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -102,7 +104,7 @@
 
 - (Contato *) pegaDadosDoFormulario {
     if (!self.contato) {
-        contato = [[Contato alloc] init];
+        contato = [NSEntityDescription insertNewObjectForEntityForName:@"Contato" inManagedObjectContext:self.contexto];
     }
     
     contato.nome = self.nome.text;

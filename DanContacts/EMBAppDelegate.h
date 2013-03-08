@@ -16,4 +16,13 @@
 
 @property(strong) NSString *arquivoContatos;
 
+@property(readonly,strong) NSManagedObjectContext *contexto;
+
+- (NSURL*) applicationDocumentsDirectory;
+- (NSManagedObjectModel *) managedObjectModel;
+- (NSPersistentStoreCoordinator *) coordinator;
+- (void) salvaContexto;
+- (void) inserirDados;
+- (void) buscarContatos;
+
 @end

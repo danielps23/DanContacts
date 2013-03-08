@@ -21,6 +21,8 @@
 
 @property(strong) Contato *contatoSelecionado;
 
+@property(strong) NSManagedObjectContext *contexto;
+
 - (void) createSections;
 - (void) populateSections;
 - (NSArray *) orderedSections;

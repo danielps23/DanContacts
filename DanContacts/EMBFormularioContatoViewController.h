@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @property (weak, nonatomic) IBOutlet UIButton *botaoCoordenada;
 
+@property(strong) NSManagedObjectContext *contexto;
+
 @property(strong) Contato *contato;
 
 @property(weak) id<EMBListaContatosProtocol> delegate;

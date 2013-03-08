@@ -13,6 +13,7 @@
 @implementation EMBListaContatosViewController
 
 @synthesize contatos, sections, contatoSelecionado;
+@synthesize contexto = _contexto;
 
 - (id) init {
     if ( self = [super init] ) {
@@ -40,6 +41,7 @@
 //    [alert show];
     EMBFormularioContatoViewController *form = [[EMBFormularioContatoViewController alloc] init];
     form.delegate = self;
+    form.contexto = self.contexto;
     form.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:form];
     [self presentModalViewController:nav animated:YES];
